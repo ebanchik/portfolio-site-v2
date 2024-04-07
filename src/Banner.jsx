@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
 
 export const Banner = () => {
+
+  const fadeInVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { delay: 0.5, duration: 1.5 } // Customize duration as needed
+    }
+  };  
+
   // Animation variants for "EXCITING"
   const excitingColorVariant = {
     initial: { color: "#ffffff" },
@@ -29,7 +38,9 @@ export const Banner = () => {
   };
 
   return (
-    <div className="Banner">
+    <motion.div className="Banner" variants={fadeInVariant}
+    initial="hidden"
+    animate="visible">
       <h1 className="tagline">FRONT END DEVELOPER WITH A FOCUS <br/>
       ON CREATING <motion.span className="highlight1" variants={excitingColorVariant} initial="initial" animate="animate">EXCITING</motion.span>, <motion.span className="highlight2" variants={engagingColorVariant} initial="initial" animate="animate">ENGAGING</motion.span>, <br/>
       AND <motion.span className="highlight3" variants={performativeColorVariant} initial="initial" animate="animate">PERFORMATIVE</motion.span> WEBSITES</h1>
@@ -37,7 +48,7 @@ export const Banner = () => {
         <h1 className="initial">Eli B.</h1>
       </div>
       {/* SVG and other content remains unchanged */}
-    </div>
+    </motion.div>
   );
 };
 
