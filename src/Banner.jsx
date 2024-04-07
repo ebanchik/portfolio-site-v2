@@ -1,15 +1,42 @@
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const Banner = () => {
+  // Animation variants for "EXCITING"
+  const excitingColorVariant = {
+    initial: { color: "#ffffff" },
+    animate: {
+      color: "#FF5733", // Customize this color
+      transition: { delay: 1, duration: 1 },
+    },
+  };
+
+  // Animation variants for "ENGAGING"
+  const engagingColorVariant = {
+    initial: { color: "#ffffff" },
+    animate: {
+      color: "#00FF00", // Customize this color
+      transition: { delay: 1.5, duration: 1 }, // Adjust timing as desired
+    },
+  };
+
+  // Animation variants for "PERFORMATIVE"
+  const performativeColorVariant = {
+    initial: { color: "#ffffff" },
+    animate: {
+      color: "#0000FF", // Customize this color
+      transition: { delay: 2, duration: 1 }, // Adjust timing as desired
+    },
+  };
 
   return (
     <div className="Banner">
       <h1 className="tagline">FRONT END DEVELOPER WITH A FOCUS <br/>
-      ON CREATING <span className="highlight1">EXCITING</span>, <span className="highlight2">ENGAGING</span>, <br/>
-      AND <span className="highlight3">PERFORMATIVE</span> WEBSITES</h1>
+      ON CREATING <motion.span className="highlight1" variants={excitingColorVariant} initial="initial" animate="animate">EXCITING</motion.span>, <motion.span className="highlight2" variants={engagingColorVariant} initial="initial" animate="animate">ENGAGING</motion.span>, <br/>
+      AND <motion.span className="highlight3" variants={performativeColorVariant} initial="initial" animate="animate">PERFORMATIVE</motion.span> WEBSITES</h1>
       <div className="initial-container">
         <h1 className="initial">Eli B.</h1>
       </div>
+      {/* SVG and other content remains unchanged */}
     </div>
   );
 };
