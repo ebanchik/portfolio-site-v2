@@ -9,7 +9,13 @@ body {
 
 @font-face {
   font-family: 'Eighties';
-  src: url('../public/EightiesComeback_Bold.otf') format('otf');
+  src: url('../public/EightiesComeback_Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lingkawi';
+  src: url('../public/LingkawiSouth.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,13 +24,13 @@ body {
   font-family: 'Eighties';
   color: white;
   position: absolute;
-  left: 75px;
+  left: 125px;
   top: 90px;
 }
 
 .tagline {
   transform: scaleX(1.1) scaleY(2.5); /* Stretches text 150% horizontally */
-  width: 1000px;
+  width: 2000px;
   font-size: 3vw;
 }
 
@@ -36,4 +42,17 @@ body {
 }
 .highlight3 {
   color: #29ABE2;
+}
+
+.initial {
+  font-family: 'Lingkawi';
+  font-size: 10vw;
+}
+
+.initial-container {
+  font-family: 'Lingkawi';
+  position: absolute;
+  top: 75vh; /* Adjust based on design needs */
+  left: 75vw; /* Adjust to keep it responsive */
+  transform: translate(-50%, -50%); /* Optional: Centering the text block */
 }
