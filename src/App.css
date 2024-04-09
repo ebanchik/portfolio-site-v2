@@ -1,3 +1,23 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling if elements overflow */
+}
+
+/* Ensure html and body fill the viewport */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Set your app's main container to also fill the available space */
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
 body {
   background-image: url("../public/portfolio-background.png");
   background-size: cover;
@@ -23,12 +43,16 @@ body {
 .Banner {
   font-family: 'Eighties';
   color: white;
-  position: absolute;
-  left: 125px;
-  top: 90px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .tagline {
+  position: fixed;
+  margin-top: 110px;
+  margin-left: 125px;
   transform: scaleX(1.1) scaleY(2.5); /* Stretches text 150% horizontally */
   width: 2000px;
   font-size: 3vw;
@@ -47,12 +71,17 @@ body {
 .initial {
   font-family: 'Lingkawi';
   font-size: 10vw;
+  white-space: nowrap;
 }
 
 .initial-container {
   font-family: 'Lingkawi';
-  position: absolute;
-  top: 75vh; /* Adjust based on design needs */
-  left: 75vw; /* Adjust to keep it responsive */
-  transform: translate(-50%, -50%); /* Optional: Centering the text block */
+  position: relative;
+  overflow: hidden;
+  top: 82vh; /* Center vertically */
+  left: 83vw; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjusts position to truly center the element */
+  text-align: center; /* Ensures text is centered within */
+  height: 200px; /* Or adjust according to your design needs */
+  width: 100vw;
 }

@@ -1,13 +1,12 @@
 import './App.css'
-// import { Banner } from './Banner'
 import { Banner } from './Banner'
-import { Projects } from '.Project'
+import { Projects } from './Projects'
 
 function App() {
   return (
   <div>
     <Banner />
-    <Projects />
+    {/* <Projects /> */}
   </div>
   )
 }
