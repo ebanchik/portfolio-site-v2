@@ -12,7 +12,7 @@ html, body {
 
 /* Set your app's main container to also fill the available space */
 .App {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -23,7 +23,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
   width: 100vw;
 }
 
@@ -47,10 +46,11 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .tagline {
-  position: fixed;
+  position: absolute;
   margin-top: 110px;
   margin-left: 125px;
   transform: scaleX(1.1) scaleY(2.5); /* Stretches text 150% horizontally */
@@ -70,13 +70,13 @@ body {
 
 .initial {
   font-family: 'Lingkawi';
-  font-size: 10vw;
+  font-size: 8vw;
   white-space: nowrap;
 }
 
 .initial-container {
   font-family: 'Lingkawi';
-  position: relative;
+  position: absolute;
   overflow: hidden;
   top: 82vh; /* Center vertically */
   left: 83vw; /* Center horizontally */
