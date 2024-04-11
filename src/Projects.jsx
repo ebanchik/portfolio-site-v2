@@ -1,6 +1,8 @@
 export function Projects() {
 
   return (
-  <h1>Projects Page</h1>
+    <div className="Projects">
+      <h1>Projects Page</h1>
+    </div>
   );
 }
