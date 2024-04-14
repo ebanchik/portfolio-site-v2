@@ -39,6 +39,12 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Synthemesc';
+  src: url('../public/Synthemesc-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .Banner {
   font-family: 'Eighties';
@@ -73,6 +79,7 @@ body {
   font-family: 'Lingkawi';
   font-size: 8vw;
   white-space: nowrap;
+  color: aliceblue;
 }
 
 .initial-container {
@@ -119,4 +126,15 @@ body {
 
   /* Optional: makes each section the same height as the viewport */
   height: 100vh;
+}
+
+.projects-title {
+  width: 300px;
+  height: 500px;
+  font-family: "Synthemesc";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150px;
+  color: aliceblue;
 }
