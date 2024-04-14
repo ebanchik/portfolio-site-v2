@@ -102,3 +102,21 @@ body {
   height: 100vh; /* Takes full height of the viewport */
   text-align: center; /* Centers the text inside the h1 element */
 }
+
+
+.snap-container {
+  /* This enables vertical scroll snapping */
+  scroll-snap-type: y mandatory;
+
+  /* Makes the container take the full height of the viewport and enables vertical scrolling */
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.snap-section {
+  /* Each section will snap align to the start of the container */
+  scroll-snap-align: start;
+
+  /* Optional: makes each section the same height as the viewport */
+  height: 100vh;
+}
