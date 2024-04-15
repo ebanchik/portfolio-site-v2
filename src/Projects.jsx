@@ -62,13 +62,13 @@ export function Projects() {
             width: '200px',
             height: '200px',
             borderRadius: '50%',
-            backgroundColor: 'white',
+            backgroundColor: 'blue',
             boxSizing: 'border-box',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'black', // Text color
-            fontSize: '20px' // Text size
+            color: 'white', // Text color
+            fontSize: '35px' // Text size
           }}>
             {word} {/* Different word in each ball */}
           </div>

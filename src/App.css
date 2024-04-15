@@ -33,6 +33,13 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'JetBrainsMono-ExtraBold';
+  src: url('../public/JetBrainsMono-ExtraBold.ttf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 @font-face {
   font-family: 'Lingkawi';
   src: url('../public/LingkawiSouth.otf') format('opentype');
@@ -166,6 +173,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #3498db;
+  color: #3498db;
+  font-family: 'JetBrainsMono-ExtraBold';
 }
 
