@@ -4,16 +4,19 @@ import gsap from 'gsap';
 export function Projects() {
   const ballsRef = useRef([]);
 
+  // Define an array of words to display in each ball
+  const words = ["Armoire", "Graphic Design", "Dima", "Efficient", "Reliable"];
+
   useEffect(() => {
     const balls = ballsRef.current;
 
-    balls.forEach(ball => {
+    balls.forEach((ball, index) => {
       const initialX = Math.random() * (window.innerWidth - 200);
       const initialY = Math.random() * (window.innerHeight - 200);
 
       gsap.set(ball, { x: initialX, y: initialY });
 
-      const speed = 75; // Uniform speed for all balls
+      const speed = 75;
       let angle = Math.random() * 2 * Math.PI;
       let vx = Math.cos(angle) * speed;
       let vy = Math.sin(angle) * speed;
@@ -50,16 +53,25 @@ export function Projects() {
       <div className='projects-title'>
         <h1>Work</h1>
       </div>
-      <div className="ball-container">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <div key={index} ref={el => ballsRef.current[index] = el} className="ball" style={{
+      <div className="ball-container" style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
+        {words.map((word, index) => (
+          <div key={index} 
+          ref={el => ballsRef.current[index] = el} className="ball" 
+            style={{
             position: 'absolute',
             width: '200px',
             height: '200px',
             borderRadius: '50%',
             backgroundColor: 'white',
-            boxSizing: 'border-box'
-          }}></div>
+            boxSizing: 'border-box',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'black', // Text color
+            fontSize: '20px' // Text size
+          }}>
+            {word} {/* Different word in each ball */}
+          </div>
         ))}
       </div>
     </div>
