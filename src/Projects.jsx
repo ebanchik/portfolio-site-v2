@@ -5,7 +5,7 @@ export function Projects() {
   const ballsRef = useRef([]);
 
   // Define an array of words to display in each ball
-  const words = ["Armoire", "Graphic Design", "Dima", "Efficient", "Reliable"];
+  const words = ["Armoire", "Graphic Design", "Dima", "Split", "Reliable"];
 
   useEffect(() => {
     const balls = ballsRef.current;
@@ -16,7 +16,7 @@ export function Projects() {
 
       gsap.set(ball, { x: initialX, y: initialY });
 
-      const speed = 75;
+      const speed = 100;
       let angle = Math.random() * 2 * Math.PI;
       let vx = Math.cos(angle) * speed;
       let vy = Math.sin(angle) * speed;
