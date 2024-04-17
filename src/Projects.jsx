@@ -41,10 +41,12 @@ export function Projects() {
 
   const handleMouseEnter = (index) => {
     ballRefs.current[index].isHovering = true;
+    ballRefs.current[index].style.transform = 'scale(1.2)';
   };
 
   const handleMouseLeave = (index) => {
     ballRefs.current[index].isHovering = false;
+    ballRefs.current[index].style.transform = 'scale(1)';
   };
 
   return (
@@ -73,7 +75,8 @@ export function Projects() {
               color: 'white',
               fontSize: '35px',
               cursor: 'pointer',
-              boxSizing: 'border-box'
+              boxSizing: 'border-box',
+              transition: 'transform 0.5s' // Adds a smooth transition for the scaling effect
             }}>
             {word}
           </div>
