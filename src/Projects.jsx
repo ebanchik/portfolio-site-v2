@@ -1,17 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { Modal } from './Modal'
+import Modal from './Modal';  // Ensure your Modal component is properly imported
 
 export function Projects() {
   const ballRefs = useRef([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState('');
 
-  // Define an array of objects, each with word and optional videoUrl
   const balls = [
-    { id: 1, word: "Armoire", videoUrl: null },
-    { id: 2, word: "Graphic Design", videoUrl: "path/to/video1.mp4" },
+    { id: 1, word: "Graphic Design", videoUrl: null },
+    { id: 2, word: "Armoire", videoUrl: "../public/armoire-walkthrough.mov" },
     { id: 3, word: "Dima", videoUrl: null },
-    { id: 4, word: "Split", videoUrl: "path/to/video2.mp4" },
+    { id: 4, word: "Split", videoUrl: "../public/Split_Walkthrough.mov" },
   ];
 
   useEffect(() => {
@@ -84,8 +83,8 @@ export function Projects() {
             className="ball"
             style={{
               position: 'absolute',
-              left: '0px',
-              top: '0px',
+              left: '0px',  // Initial position
+              top: '0px',   // Initial position
               width: '200px',
               height: '200px',
               borderRadius: '50%',

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'; // Import PropTypes
 
-export const Modal = ({ isOpen, onClose, videoUrl }) => {
+export function Modal({ isOpen, onClose, videoUrl }) {
   if (!isOpen) return null;
 
   return (
@@ -8,34 +8,49 @@ export const Modal = ({ isOpen, onClose, videoUrl }) => {
       position: 'fixed',
       top: 0,
       left: 0,
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      width: '100vw',
+      height: '100vh',
+      backgroundColor: 'rgba(0,0,0,0.5)',  // Semi-transparent background
       display: 'flex',
-      justifyContent: 'center',
       alignItems: 'center',
-      zIndex: 1000,
+      justifyContent: 'center',
+      zIndex: 1000  // High z-index to ensure it covers other content
     }}>
       <div style={{
         position: 'relative',
-        width: '80%',
-        height: '80%',
-        backgroundColor: 'white',
         padding: 20,
+        width: '80vw',
+        height: '70vh',
+        backgroundColor: 'black',
+        borderRadius: 10,
+        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
       }}>
-        <button onClick={onClose} style={{ position: 'absolute', top: 20, right: 20 }}>Close</button>
-        <video src={videoUrl} controls autoPlay style={{ width: '100%', height: '100%' }}></video>
+        <button onClick={onClose} style={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+          border: 'none',
+          background: 'none',
+          color: 'white',
+          fontSize: '24px',
+          cursor: 'pointer'
+        }}>
+          &times;  {/* Unicode character for "X" */}
+        </button>
+        <video src={videoUrl} autoPlay controls style={{ width: '1000px', height: '540px' }}>
+          Sorry, your browser does not support embedded videos.
+        </video>
       </div>
     </div>
   );
-};
+}
 
-// Define prop types for the Modal component
+
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  videoUrl: PropTypes.string
+  videoUrl: PropTypes.string.isRequired
 };
 
+
 export default Modal;
-``
