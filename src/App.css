@@ -154,10 +154,23 @@ body {
   width: 80vw; /* Responsive width based on viewport size */
   max-width: 600px; /* Maximum width to maintain legibility */
   font-family: "Synthemesc";
-  font-size: 7rem;
   color: rgb(255, 115, 0);
+  line-height: 1; /* Tightens the line height around the text */
+  margin: 0; /* Removes default margins */
+  padding: 0; /* Removes default padding */
   z-index: 2; /* Makes sure the title appears above other elements within the same container */
+  display: flex; /* Aligns children elements (like text) with flexbox */
+  align-items: center; /* Centers children elements vertically */
+  justify-content: center; /* Centers children elements horizontally */
 }
+
+.projects-title h1 {
+  margin: 0;  
+  padding: 0; 
+  line-height: 1; 
+  font-size: 8rem;
+}
+
 
 
 .ball-container {
