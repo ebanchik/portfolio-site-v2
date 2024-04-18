@@ -61,9 +61,10 @@ export function Projects() {
       setCurrentVideoUrl(ball.content);
       setIsModalOpen(true);
     } else if (ball.type === "link") {
-      window.location.href = ball.content; // This will navigate to the link
+      window.open(ball.content, "_blank"); // Opens the link in a new tab
     }
   };
+  
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
