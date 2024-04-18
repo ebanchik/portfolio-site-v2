@@ -7,11 +7,11 @@ export function Projects() {
   const [currentVideoUrl, setCurrentVideoUrl] = useState('');
 
   const balls = [
-    { id: 1, word: "Graphic Design", videoUrl: null },
-    { id: 2, word: "Armoire", videoUrl: "../public/armoire-walkthrough.mov" },
-    { id: 3, word: "Dima", videoUrl: null },
-    { id: 4, word: "Split", videoUrl: "../public/Split_Walkthrough.mov" },
-  ];
+    { id: 1, word: "Graphic Design", type: "video", content: "../public/graphic-design-walkthrough.mov" },
+    { id: 2, word: "Armoire", type: "video", content: "../public/armoire-walkthrough.mov" },
+    { id: 3, word: "Dima", type: "link", content: "https://main--dima-studio.netlify.app/" },
+    { id: 4, word: "Split", type: "video", content: "../public/split-walkthrough.mov" },
+];
 
   useEffect(() => {
     ballRefs.current.forEach((ball, index) => {
@@ -56,10 +56,12 @@ export function Projects() {
     ballRefs.current[index].style.transform = 'scale(1)';
   };
 
-  const handleBallClick = (videoUrl) => {
-    if (videoUrl) {
-      setCurrentVideoUrl(videoUrl);
+  const handleBallClick = (ball) => {
+    if (ball.type === "video") {
+      setCurrentVideoUrl(ball.content);
       setIsModalOpen(true);
+    } else if (ball.type === "link") {
+      window.location.href = ball.content; // This will navigate to the link
     }
   };
 
@@ -79,7 +81,7 @@ export function Projects() {
             ref={el => ballRefs.current[index] = el}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
-            onClick={() => handleBallClick(ball.videoUrl)}
+            onClick={() => handleBallClick(ball)}
             className="ball"
             style={{
               position: 'absolute',
