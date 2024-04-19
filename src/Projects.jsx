@@ -91,7 +91,7 @@ export function Projects() {
               width: '200px',
               height: '200px',
               borderRadius: '50%',
-              backgroundColor: 'blue',
+              border: '6px solid blue',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

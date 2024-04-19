@@ -53,6 +53,15 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Aktiv';
+  src: url('../public/AktivGrotesk-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 .Banner {
   font-family: 'Eighties';
   color: white;
@@ -186,8 +195,8 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  color: #3498db;
-  font-family: 'JetBrainsMono-ExtraBold';
+  /* background-color: #122f17; */
+  font-family: 'Synthemesc';
 }
 
 @keyframes float {
